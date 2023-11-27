@@ -1,0 +1,29 @@
+.card {
+  position: relative;
+  background: var(--white);
+  border-radius: var(--global-border-radius);
+  box-shadow: 0px 0.3px 0.9px rgba(0, 0, 0, 0.1), 0px 1.6px 3.6px rgba(0, 0, 0, 0.13);
+
+  &__header {
+    padding: 0.4rem 1.25rem;
+    font-size: 0.8rem;
+    color: #555;
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+    border-bottom: 1px solid #edebe9;
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+  }
+
+  &__body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1rem 0.5rem;
+  }
+
+  &[data-margin='auto'] {
+    max-width: 480px;
+    margin: 0 auto;
+  }
+}

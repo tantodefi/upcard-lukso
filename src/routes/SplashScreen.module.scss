@@ -1,0 +1,23 @@
+.section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  place-items: center;
+  min-height: 100dvh;
+  min-height: 100vh;
+  background: var(--gradient-primary);
+  // background-color: var(--primary-color);
+  // background-image: url('./../assets/pizza-slice.png');
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: contain;
+  z-index: 999;
+
+  figure {
+    img {
+      width: 120px;
+    }
+  }
+}
