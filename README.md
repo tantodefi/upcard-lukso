@@ -6,7 +6,7 @@
     <a href="">youtube video</a> | <a href="https://upcard.link">live site</a>
 </div>
 
-![upcard](/src/assets/upcard-screenshot.png)
+![upcard](/public/upcard-screenshot.png)
 
 <div align="center">
     <h2>About UPcard</h2>
