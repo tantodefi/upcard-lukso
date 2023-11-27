@@ -28,7 +28,7 @@ Generate a colorful QRCode and NFT2.0 based on a users info on [Lukso](https://l
 
 git clone this repo:
 
-```git clone ```
+```git clone```
 
 install dependencies:
 
@@ -45,7 +45,6 @@ run app:
 ### Built By
 
 - [web3senior](https://github.com/web3senior)
-- [bshevchenko](https://github.com/bshevchenko)
 - [tantodefi](https://github.com/tantodefi)
 
 ### Special Thanks
