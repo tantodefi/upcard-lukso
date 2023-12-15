@@ -126,7 +126,7 @@ export default function Profile({ title }) {
           [
             {
               width: 1024,
-              height: 974,
+              height: 1024,
               url: QRcode, //'ifps://QmW4wM4r9yWeY1gUCtt7c6v3ve7Fzdg8CKvTS96NU9Uiwr',
               verification: {
                 method: 'keccak256(bytes)',
@@ -136,19 +136,19 @@ export default function Profile({ title }) {
           ],
         ],
         assets: [
-          {
-            verification: {
-              method: 'keccak256(bytes)',
-              data: '0x98fe032f81c43426fbcfb21c780c879667a08e2a65e8ae38027d4d61cdfe6f55',
-            },
-            url: QRcode,
-            fileType: 'fbx',
-          },
+          // {
+          //   verification: {
+          //     method: 'keccak256(bytes)',
+          //     data: '0x98fe032f81c43426fbcfb21c780c879667a08e2a65e8ae38027d4d61cdfe6f55',
+          //   },
+          //   url: QRcode,
+          //   fileType: 'fbx',
+          // },
         ],
         attributes: [
           {
             key: 'Version',
-            value: '1',
+            value: '2',
             type: 'string',
           },
           {
@@ -243,7 +243,7 @@ export default function Profile({ title }) {
       const result = await profile.fetchData('LSP5ReceivedAssets[]')
       return result.value
     } catch (error) {
-      return console.log('This is not an ERC725 Contract: ', error)
+      console.log('This is not an ERC725 Contract: ', error)
     }
   }
 
@@ -325,23 +325,23 @@ export default function Profile({ title }) {
     })
   }
 
-  const transferTokenToAnAddress = async(addr)=>{
+  const transferTokenToAnAddress = async (addr) => {
     const myToken = new web3.eth.Contract(LSP7Mintable.abi, tokenTransferAddress)
 
-   return await myToken.methods
-     .transfer(
-       addr, // sender address
-       tokenReceiverAddress, // receiving address
-       tokenAmount, // token amount
-       false, // force parameter
-       '0x' // additional data
-     )
-     .send({ from: addr })
+    return await myToken.methods
+      .transfer(
+        addr, // sender address
+        tokenReceiverAddress, // receiving address
+        tokenAmount, // token amount
+        false, // force parameter
+        '0x' // additional data
+      )
+      .send({ from: addr })
   }
 
   const handleTransferToken = async () => {
     connectWallet().then(async (addr) => {
-      transferTokenToAnAddress(addr).then(res=>{
+      transferTokenToAnAddress(addr).then((res) => {
         console.log(res)
         if (res.blockHash) toast.success(`Token sent! Block number: ${res.blockNumber}`)
       })
@@ -534,7 +534,7 @@ export default function Profile({ title }) {
               {assetAddressMetaData &&
                 assetAddressMetaData.length > 0 &&
                 assetAddressMetaData.map((item, i) => {
-                  if (item && typeof item[3].value.LSP4Metadata !== 'undefined')
+                  if (item && item[3].value.LSP4Metadata && typeof item[3].value.LSP4Metadata !== 'undefined')
                     return (
                       <ul className="grid__item" key={i}>
                         <li>
