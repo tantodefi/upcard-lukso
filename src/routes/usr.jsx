@@ -534,7 +534,7 @@ export default function Profile({ title }) {
               {assetAddressMetaData &&
                 assetAddressMetaData.length > 0 &&
                 assetAddressMetaData.map((item, i) => {
-                  if (item && item[3].value.LSP4Metadata && typeof item[3].value.LSP4Metadata !== 'undefined')
+                  if (item && item[3].value && item[3].value.LSP4Metadata && typeof item[3].value.LSP4Metadata !== 'undefined')
                     return (
                       <ul className="grid__item" key={i}>
                         <li>
